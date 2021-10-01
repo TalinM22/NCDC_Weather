@@ -67,8 +67,6 @@ for (columns, group) in data.groupby(["GHCN_Code"]):
 data = pd.concat(df_list, ignore_index=True)
 
 
-
-
 if [(data["TMIN"].isnull()) & (data["TAVG"].notnull()) & (data["TMAX"].notnull())]:
     data["TMIN"] = (2 * data["TAVG"]) - data["TMAX"]
 
